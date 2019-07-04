@@ -8,6 +8,11 @@ variable "cluster_external_dns" {
   description = "PKS external hostname"
 }
 
+variable "cluster_uuid" {
+  type        = "string"
+  description = "PKS cluster UUID"
+}
+
 variable "access_key" {
   type        = "string"
   description = "AWS access key ID"
@@ -31,11 +36,6 @@ variable "subnet_ids" {
 variable "master_security_group" {
   type        = "string"
   description = "AWS security group to associate to the ELB"
-}
-
-variable "master_ids" {
-  type        = "list"
-  description = "AWS instance IDs of Kubernetes master VM"
 }
 
 variable "zone_id" {

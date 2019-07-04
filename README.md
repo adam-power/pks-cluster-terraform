@@ -13,14 +13,17 @@ Currently AWS only.
 1. Create a `terraform.tfvars` file and fill it in with the following values:
 
 ```
+# PKS vars
 cluster_name          = "pks-cluster-name"
 cluster_external_dns  = "pks-external-hostname"
+cluster_uuid          = "pks-cluster-uuid"
+
+# AWS vars
 access_key            = "access key"
 secret_key            = "secret key"
 region                = "eu-west-2"
 subnet_ids            = ["subnet1", "subnet2", "subnet3"]
 master_security_group = "master SG"
-master_ids            = ["master1", "master2", "master3"]
 zone_id               = "zone ID"
 ```
 
@@ -37,7 +40,7 @@ terraform apply
 
 ## Wrapper script
 
-If you are logged in with the PKS CLI, you can remove the `cluster_name` and `cluster_external_dns` variables from your TF vars file and run the create script instead:
+If you are logged in with the PKS CLI, you can remove the `cluster_name`, `cluster_external_dns` and `cluster_uuid` variables from your TF vars file and run the create script instead:
 
 ```bash
 ./create.sh <your cluster name>
