@@ -1,6 +1,5 @@
 resource "aws_elb" "k8s_masters" {
   name = "k8s-master-${var.cluster_name}"
-  # availability_zones = "${var.availability_zones}"
 
   subnets = "${var.subnet_ids}"
 

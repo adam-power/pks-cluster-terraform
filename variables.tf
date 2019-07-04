@@ -18,11 +18,6 @@ variable "region" {
   description = "AWS region"
 }
 
-# variable "availability_zones" {
-#   type        = "list"
-#   description = "AWS availability zones"
-# }
-
 variable "subnet_ids" {
   type        = "list"
   description = "AWS subnet IDs to attach the ELB to"
