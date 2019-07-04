@@ -20,7 +20,7 @@ variable "region" {
 
 variable "subnet_ids" {
   type        = "list"
-  description = "AWS subnet IDs to attach the ELB to"
+  description = "AWS subnet IDs to attach the ELB to. These correspond to the 'services_subnet_ids' output from terraforming-aws"
 }
 
 variable "master_security_group" {
@@ -35,5 +35,5 @@ variable "master_ids" {
 
 variable "zone_id" {
   type        = "string"
-  description = "AWS Route53 hosted zone ID"
+  description = "AWS Route53 hosted zone ID. This corresponds to the 'dns_zone_id' output from terraforming-aws"
 }
