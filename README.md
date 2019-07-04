@@ -34,3 +34,11 @@ zone_id               = "zone ID"
 terraform init
 terraform apply
 ```
+
+## Wrapper script
+
+If you are logged in with the PKS CLI, you can remove the `cluster_name` and `cluster_external_dns` variables from your TF vars file and run the create script instead:
+
+```bash
+./create.sh <your cluster name>
+```
