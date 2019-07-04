@@ -3,6 +3,11 @@ variable "cluster_name" {
   description = "PKS cluster name"
 }
 
+variable "cluster_external_dns" {
+  type        = "string"
+  description = "PKS external hostname"
+}
+
 variable "access_key" {
   type        = "string"
   description = "AWS access key ID"

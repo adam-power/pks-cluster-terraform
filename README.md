@@ -3,7 +3,7 @@
 These Terraform configs create the necessary infrastructure around a PKS Kubernetes cluster.
 This includes:
 
-+ An Elastic Load Balancer for k8s masters
++ An Elastic Load Balancer for the k8s master(s)
 + A Route53 DNS record to match the PKS cluster's external hostname
 
 Currently AWS only.
@@ -14,6 +14,7 @@ Currently AWS only.
 
 ```
 cluster_name          = "pks-cluster-name"
+cluster_external_dns  = "pks-external-hostname"
 access_key            = "access key"
 secret_key            = "secret key"
 region                = "eu-west-2"
