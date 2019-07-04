@@ -24,7 +24,7 @@ master_ids            = ["master1", "master2", "master3"]
 zone_id               = "zone ID"
 ```
 
-**NOTE:** If you paved your infrastructure using (terraforming-aws)[https://github.com/pivotal-cf/terraforming-aws], you can reference the following Terraform outputs:
+**NOTE:** If you paved your infrastructure using [terraforming-aws](https://github.com/pivotal-cf/terraforming-aws), you can reference the following Terraform outputs:
 + `subnet_ids` = `public_subnet_ids`
 + `zone_id` = `dns_zone_id`
 
