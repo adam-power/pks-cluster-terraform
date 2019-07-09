@@ -30,6 +30,7 @@ zone_id               = "zone ID"
 **NOTE:** If you paved your infrastructure using [terraforming-aws](https://github.com/pivotal-cf/terraforming-aws), you can reference the following Terraform outputs:
 + `subnet_ids` = `public_subnet_ids`
 + `zone_id` = `dns_zone_id`
++ `master_security_group` = `pks_master_security_group_id`
 
 1. Initialize Terraform and apply
 
