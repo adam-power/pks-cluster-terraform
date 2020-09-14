@@ -26,6 +26,14 @@ variable "location" {
   type = string
 }
 
+variable "master_asg" {
+  type = string
+}
+
+variable "master_nics" {
+  type = string
+}
+
 variable "resource_group_name" {
   type = string
 }

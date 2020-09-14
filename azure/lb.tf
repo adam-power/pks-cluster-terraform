@@ -30,6 +30,7 @@ resource "azurerm_lb_rule" "pks-cluster-lb-rule" {
   loadbalancer_id                = azurerm_lb.pks-cluster-lb.id
   probe_id                       = azurerm_lb_probe.pks-cluster-probe.id
   frontend_ip_configuration_name = "PublicIPAddress"
+  backend_address_pool_id        = azurerm_lb_backend_address_pool.pks-cluster-backend-pool.id
   protocol                       = "Tcp"
   frontend_port                  = 8443
   backend_port                   = 8443
@@ -41,4 +42,15 @@ resource "azurerm_lb_probe" "pks-cluster-probe" {
   loadbalancer_id     = azurerm_lb.pks-cluster-lb.id
   protocol            = "Tcp"
   port                = 8443
+}
+
+data "azurerm_network_interface" "pks-master-nics" {
+  name                = var.master_nics
+  resource_group_name = var.resource_group_name
+}
+
+resource "azurerm_network_interface_backend_address_pool_association" "pks-nic-pool-assoc" {
+  network_interface_id    = data.azurerm_network_interface.pks-master-nics.id
+  ip_configuration_name   = "ipconfig0"
+  backend_address_pool_id = azurerm_lb_backend_address_pool.pks-cluster-backend-pool.id
 }
