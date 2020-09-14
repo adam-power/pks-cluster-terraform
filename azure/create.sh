@@ -13,9 +13,8 @@ if [ "$#" -ne 1 ]; then
   exit 1
 fi
 
-cluster_name="$1"
-
-exportTFVars "$cluster_name"
+TF_VAR_cluster_name="$1"
+export TF_VAR_cluster_name
 
 terraform init
 terraform apply --auto-approve
