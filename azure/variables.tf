@@ -31,7 +31,7 @@ variable "master_asg" {
 }
 
 variable "master_nics" {
-  type = string
+  type = list
 }
 
 variable "resource_group_name" {

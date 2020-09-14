@@ -45,12 +45,14 @@ resource "azurerm_lb_probe" "pks-cluster-probe" {
 }
 
 data "azurerm_network_interface" "pks-master-nics" {
-  name                = var.master_nics
+  count               = length(var.master_nics)
+  name                = var.master_nics[count.index]
   resource_group_name = var.resource_group_name
 }
 
 resource "azurerm_network_interface_backend_address_pool_association" "pks-nic-pool-assoc" {
-  network_interface_id    = data.azurerm_network_interface.pks-master-nics.id
+  count                   = length(var.master_nics)
+  network_interface_id    = data.azurerm_network_interface.pks-master-nics[count.index].id
   ip_configuration_name   = "ipconfig0"
   backend_address_pool_id = azurerm_lb_backend_address_pool.pks-cluster-backend-pool.id
 }
