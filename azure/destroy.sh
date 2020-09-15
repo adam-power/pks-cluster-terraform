@@ -8,6 +8,9 @@ if [ "$#" -ne 1 ]; then
 fi
 
 TF_VAR_cluster_name="$1"
+TF_VAR_master_nics='[]'
+
 export TF_VAR_cluster_name
+export TF_VAR_master_nics
 
 terraform destroy --auto-approve

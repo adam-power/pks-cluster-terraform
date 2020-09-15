@@ -5,5 +5,5 @@ provider "azurerm" {
   tenant_id       = var.tenant_id
   environment     = var.cloud_name
 
-  version = "~> 1.43"
+  features {}
 }
