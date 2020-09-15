@@ -6,8 +6,6 @@ This includes:
 + An Elastic Load Balancer for the k8s master(s)
 + A Route53 DNS record to match the PKS cluster's external hostname
 
-Currently AWS only.
-
 ## Usage
 
 1. Create a `terraform.tfvars` file and fill it in with the following values:
@@ -45,4 +43,10 @@ If you are logged in with the PKS CLI, you can remove the `cluster_name`, `clust
 
 ```bash
 ./create.sh <your cluster name>
+```
+
+You can clean up by running the destroy script:
+
+```bash
+./destroy.sh <your cluster name>
 ```
