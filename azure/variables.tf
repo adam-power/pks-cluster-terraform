@@ -26,10 +26,6 @@ variable "location" {
   type = string
 }
 
-variable "master_asg" {
-  type = string
-}
-
 variable "master_nics" {
   type = list
 }
@@ -42,9 +38,15 @@ variable "tenant_id" {
   type = string
 }
 
+// Optional variables
 variable "cloud_name" {
   description = "The Azure cloud environment to use. Available values at https://www.terraform.io/docs/providers/azurerm/#environment"
   default     = "public"
   type        = string
 }
 
+variable "master_asg" {
+  description = "An application security group to add to the master VMs"
+  default     = ""
+  type        = string
+}
